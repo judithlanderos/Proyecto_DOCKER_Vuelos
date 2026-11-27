@@ -257,9 +257,7 @@
 </template>
 
 <script setup>
-// Principio SOLID - Single Responsibility: esta vista solo maneja la gestion de aviones
-// Patron de diseño - Observer: DataTables observa cambios en los datos y actualiza la tabla
-// Clean Code: funciones pequeñas con un solo proposito, nombres descriptivos
+
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
