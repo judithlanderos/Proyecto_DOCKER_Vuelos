@@ -1,14 +1,28 @@
+
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
+
 app.use(express.json());
 
+// Ruta principal
 app.get("/api", (req, res) => {
     res.json({
         mensaje: "Backend Express funcionando"
+    });
+});
+
+// Ruta para comprobar la comunicación con el frontend
+app.get("/api/auth/ping", (req, res) => {
+    res.json({
+        mensaje: "Backend disponible",
+        conectado: true
     });
 });
 
