@@ -1,7 +1,7 @@
 services:
 
   frontend:
-    build: ./frontend
+    image: judithlan/reservavuelos-frontend:latest
     container_name: frontend-vue
     ports:
       - "8084:80"
@@ -11,7 +11,7 @@ services:
       - app-network
 
   backend:
-    build: ./backend
+    image: judithlan/reservavuelos-backend:latest
     container_name: backend-express
     ports:
       - "3000:3000"
@@ -26,7 +26,7 @@ services:
       - app-network
 
   database:
-    build: ./database
+    image: judithlan/reservavuelos-database:latest
     container_name: database-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
